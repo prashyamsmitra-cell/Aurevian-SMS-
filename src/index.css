@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ivory text-charcoal antialiased;
+  font-feature-settings: 'ss01' on, 'cv01' on;
+}
+
+html.dark body {
+  @apply bg-ink text-stone-100;
+}
+
+::selection {
+  background: #E1CB94;
+  color: #1C1A16;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D2C7AC transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #D2C7AC;
+  border-radius: 8px;
+}
+html.dark *::-webkit-scrollbar-thumb {
+  background: #4C463C;
+}
+
+:focus-visible {
+  outline: 2px solid #9C7A3C;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.hairline {
+  @apply border-stone-200;
+}
+html.dark .hairline {
+  border-color: #332F28;
+}
+
+.panel {
+  @apply bg-white/60 dark:bg-stone-900/40 border border-stone-200 dark:border-stone-800;
+}
+
+.eyebrow {
+  @apply text-[11px] font-medium tracking-widest2 uppercase text-stone-500;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeUp {
+  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

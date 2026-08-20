@@ -15,8 +15,8 @@ const ROLE_TABS: { role: Role; label: string; icon: React.ElementType }[] = [
 ]
 
 const DEMO: Record<Role, { email: string; password: string }> = {
-  student: { email: 'arjun.mehta@aurelis.edu', password: DEMO_PASSWORD_STUDENT },
-  teacher: { email: 'priya.rao@aurelis.edu', password: DEMO_PASSWORD_TEACHER },
+  student: { email: 'arjun.mehta@aurevian.edu', password: DEMO_PASSWORD_STUDENT },
+  teacher: { email: 'priya.rao@aurevian.edu', password: DEMO_PASSWORD_TEACHER },
   admin: { email: ADMIN_ACCOUNT.email, password: ADMIN_ACCOUNT.password },
 }
 
@@ -69,7 +69,7 @@ export default function Login() {
           initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 font-display text-2xl tracking-wide"
         >
-          AURELIS
+          AUREVIAN
         </motion.div>
 
         <motion.div
@@ -104,7 +104,7 @@ export default function Login() {
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="w-full max-w-[400px]"
         >
-          <div className="lg:hidden font-display text-2xl tracking-wide text-charcoal dark:text-stone-50 mb-10">AURELIS</div>
+          <div className="lg:hidden font-display text-2xl tracking-wide text-charcoal dark:text-stone-50 mb-10">AUREVIAN</div>
 
           <p className="eyebrow mb-3">Welcome back</p>
           <h2 className="font-display text-3xl text-charcoal dark:text-stone-50 mb-8">Sign in to your institutional portal.</h2>
@@ -141,7 +141,7 @@ export default function Login() {
             >
               <div>
                 <label className="block text-[11px] font-medium tracking-widest2 uppercase text-stone-500 mb-2">Institutional email</label>
-                <Input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="name@aurelis.edu" autoComplete="username" />
+                <Input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="name@aurevian.edu" autoComplete="username" />
               </div>
               <div>
                 <label className="block text-[11px] font-medium tracking-widest2 uppercase text-stone-500 mb-2">Password</label>

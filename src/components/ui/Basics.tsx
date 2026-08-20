@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-export function Badge({ tone = 'neutral', children }: { tone?: 'success' | 'warning' | 'danger' | 'neutral' | 'brass'; children: React.ReactNode }) {
+export function Badge({ tone = 'neutral', children, className = '' }: { tone?: 'success' | 'warning' | 'danger' | 'neutral' | 'brass'; children: React.ReactNode; className?: string }) {
   const tones: Record<string, string> = {
     success: 'bg-emerald-600/10 text-emerald-700 dark:text-emerald-400 border-emerald-600/25',
     warning: 'bg-brass-400/10 text-brass-700 dark:text-brass-300 border-brass-400/30',
@@ -10,7 +10,7 @@ export function Badge({ tone = 'neutral', children }: { tone?: 'success' | 'warn
     brass: 'bg-brass-500/10 text-brass-700 dark:text-brass-300 border-brass-500/30',
   }
   return (
-    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[11px] font-medium tracking-wide ${tones[tone]}`}>
+    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[11px] font-medium tracking-wide ${tones[tone]} ${className}`}>
       {children}
     </span>
   )

@@ -13,7 +13,7 @@ const TITLES: Record<string, string> = {
 export default function Shell({ role }: { role: 'admin' | 'teacher' | 'student' }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
-  const title = TITLES[location.pathname] ?? 'Aurelis'
+  const title = TITLES[location.pathname] ?? 'Aurevian'
 
   const layoutKey = `layout-${location.pathname}`
 

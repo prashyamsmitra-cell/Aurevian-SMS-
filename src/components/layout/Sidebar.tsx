@@ -40,7 +40,7 @@ function NavContent({ role, onNavigate }: { role: 'admin' | 'teacher' | 'student
   return (
     <div className="flex flex-col h-full">
       <div className="px-7 pt-9 pb-7">
-        <div className="font-display text-[26px] tracking-wide text-charcoal dark:text-stone-50 leading-none">AURELIS</div>
+        <div className="font-display text-[26px] tracking-wide text-charcoal dark:text-stone-50 leading-none">AUREVIAN</div>
         <div className="eyebrow mt-2">Institutional Management</div>
       </div>
       <nav className="flex-1 px-4 overflow-y-auto">

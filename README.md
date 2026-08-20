@@ -1,4 +1,4 @@
-# Aurelis — Institutional Management System
+# Aurevion — Institutional Management System
 
 A frontend-only Student Management System with a "quiet luxury" design language —
 ivory/charcoal/brass palette, editorial serif headings, and slow, intentional motion

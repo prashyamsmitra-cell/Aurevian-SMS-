@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Users, GraduationCap, BookOpen, Wallet } from 'lucide-react'
 import { useApp } from '../../context/AppContext'
 import { Card, Divider } from '../../components/ui/Basics'
-import { TrendArea, CompareBars, SplitPie } from '../../components/charts/Charts'
+import { TrendArea, CompareBars, SplitPie, usePalette } from '../../components/charts/Charts'
 import { fmtCurrency } from '../../lib/utils'
 
 const enrollmentTrend = [
@@ -19,6 +19,7 @@ const item = { hidden: { opacity: 0, y: 14 }, show: { opacity: 1, y: 0, transiti
 
 export default function AdminDashboard() {
   const { students, teachers, classes, fees, tests, attendance } = useApp()
+  const p = usePalette()
 
   const totalCollected = fees.reduce((a, f) => a + f.paid, 0)
   const totalBilled = fees.reduce((a, f) => a + f.total, 0)
@@ -28,9 +29,9 @@ export default function AdminDashboard() {
   const deptDist = useMemo(() => {
     const map: Record<string, number> = {}
     students.forEach((s) => { map[s.department] = (map[s.department] ?? 0) + 1 })
-    const colors = ['#9C7A3C', '#3F5B48', '#7A3B37', '#4C463C', '#B4903F']
+    const colors = [p.brass, '#3F5B48', '#7A3B37', p.axis, p.brassSoft]
     return Object.entries(map).map(([name, value], i) => ({ name, value, color: colors[i % colors.length] }))
-  }, [students])
+  }, [students, p])
 
   const perDept = useMemo(() => {
     const map: Record<string, { label: string; students: number; faculty: number }> = {}
@@ -152,7 +153,7 @@ export default function AdminDashboard() {
           <h3 className="font-display text-xl text-charcoal dark:text-stone-50 mb-6">Students &amp; Faculty by Department</h3>
           <CompareBars
             data={perDept}
-            bars={[{ key: 'students', color: '#1C1A16', name: 'Students' }, { key: 'faculty', color: '#9C7A3C', name: 'Faculty' }]}
+            bars={[{ key: 'students', color: p.line, name: 'Students' }, { key: 'faculty', color: '#9C7A3C', name: 'Faculty' }]}
           />
         </Card>
       </motion.div>

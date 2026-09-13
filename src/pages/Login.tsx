@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, GraduationCap, UserRound, ShieldCheck } from 'lucide-react'
+import { ArrowLeft, ArrowRight, GraduationCap, UserRound, ShieldCheck } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 import { Input } from '../components/ui/Field'
 import Button from '../components/ui/Button'
@@ -55,7 +55,14 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2 bg-ivory dark:bg-ink">
+    <div className="relative min-h-screen grid lg:grid-cols-2 bg-ivory dark:bg-ink">
+      <Link
+        to="/"
+        className="group absolute right-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-stone-300 dark:border-stone-700 bg-ivory/70 dark:bg-ink/70 px-4 py-2 text-[13px] font-medium text-stone-600 backdrop-blur-md transition-colors duration-300 hover:border-charcoal hover:text-charcoal dark:border-stone-700 dark:text-stone-300 dark:hover:border-stone-400 dark:hover:text-stone-100 sm:right-6 sm:top-6"
+      >
+        <ArrowLeft size={14} className="transition-transform duration-300 ease-luxe group-hover:-translate-x-0.5" />
+        Back to home
+      </Link>
       {/* Editorial visual panel */}
       <div className="relative hidden lg:flex flex-col justify-between overflow-hidden bg-charcoal text-ivory px-14 py-14">
         <div

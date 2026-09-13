@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useApp } from './context/AppContext'
 import Login from './pages/Login'
+import Landing from './pages/Landing'
 import NotFound from './pages/NotFound'
 import Shell from './components/layout/Shell'
 import { ToastStack } from './components/ui/Overlays'
@@ -36,7 +37,7 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Navigate to={session ? `/${session.role}` : '/login'} replace />} />
+        <Route path="/" element={session ? <Navigate to={`/${session.role}`} replace /> : <Landing />} />
         <Route path="/login" element={session ? <Navigate to={`/${session.role}`} replace /> : <Login />} />
 
         <Route path="/admin" element={<Protected role="admin"><Shell role="admin" /></Protected>}>
